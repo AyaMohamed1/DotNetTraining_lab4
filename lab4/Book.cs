@@ -20,10 +20,12 @@ namespace lab4
             Price= _Price;
         }
         public override string ToString() {
-            string res = $"Book ISBN: {ISBN}\nBook Title: {Title}\nBook Authors: ";
-            foreach(var item in Authors) { res+= item.ToString() + ", "; }
-            res += $"\nBook Publication Date: {PublicationDate}\nBook price: {Price}\n" ;
-            return res ;
+            StringBuilder res = new($"Book ISBN: {ISBN}\nBook Title: {Title}\nBook Authors: ");
+            foreach(var item in Authors) {
+                res.Append(item.ToString() + ", ");
+            }
+            res.Append($"\nBook Publication Date: {PublicationDate}\nBook price: {Price}\n") ;
+            return res.ToString() ;
         }
     }
 }
